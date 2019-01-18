@@ -1,3 +1,4 @@
+variable credentials_path {}
 variable profile {}
 variable region {}
 variable "env_name" {}
