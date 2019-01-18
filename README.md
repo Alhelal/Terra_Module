@@ -1,5 +1,5 @@
 Terraform Infastructure modules for VPC, Subnet, Routing table, Nat Gateway, Internet Gateway
-We need to create a local terraform.tfvars with following variables value:
+We need to create a local terraform.tfvars with following variable values:
 
 profile = ""
 
