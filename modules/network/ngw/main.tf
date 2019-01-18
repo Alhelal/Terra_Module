@@ -2,15 +2,15 @@
 resource "aws_eip" "Eip_Pub_Sub1" {
     vpc      = true
     tags {
-      Name = "${terraform.workspace}:Pub_Sub1_Eip"
-      Environment = "${terraform.workspace}"
+      Name = "${var.env_name}:Pub_Sub1_Eip"
+      Environment = "${var.env_name}"
   }
 }
 resource "aws_eip" "Eip_Pub_Sub2" {
     vpc      = true
     tags {
-      Name = "${terraform.workspace}:Pub_Sub2_Eip"
-      Environment = "${terraform.workspace}"
+      Name = "${var.env_name}:Pub_Sub2_Eip"
+      Environment = "${var.env_name}"
   }
 }
 
@@ -20,8 +20,8 @@ resource "aws_nat_gateway" "Pub_Sub1_Ngw" {
     subnet_id = "${var.public-subnet1_id}"
 #    depends_on = "${aws_internet_gateway.igw}"
     tags {
-      Name = "${terraform.workspace}:Pub_Sub1_Ngw"
-      Environment = "${terraform.workspace}"
+      Name = "${var.env_name}:Pub_Sub1_Ngw"
+      Environment = "${var.env_name}"
   }
 }
 resource "aws_nat_gateway" "Pub_Sub2_Ngw" {
@@ -29,7 +29,7 @@ resource "aws_nat_gateway" "Pub_Sub2_Ngw" {
     subnet_id = "${var.public-subnet2_id}"
 #    depends_on = "${aws_internet_gateway.igw}"
     tags {
-      Name = "${terraform.workspace}:Pub_Sub2_Ngw"
-      Environment = "${terraform.workspace}"
+      Name = "${var.env_name}:Pub_Sub2_Ngw"
+      Environment = "${var.env_name}"
   }
 }

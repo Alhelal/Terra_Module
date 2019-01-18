@@ -7,8 +7,8 @@ resource "aws_route_table" "public_rt" {
       gateway_id = "${var.igw_id}"
     }
     tags {
-      Name = "${terraform.workspace}:public_rt"
-      Environment = "${terraform.workspace}"
+      Name = "${var.env_name}:public_rt"
+      Environment = "${var.env_name}"
       Type = "public"
     }
 }
@@ -16,16 +16,16 @@ resource "aws_route_table" "public_rt" {
 resource "aws_route_table" "private_rt1a" {
     vpc_id = "${var.vpc_id}"
     tags {
-      Name = "${terraform.workspace}:private_rt1a"
-      Environment = "${terraform.workspace}"
+      Name = "${var.env_name}:private_rt1a"
+      Environment = "${var.env_name}"
       Type = "private"
     }
 }
 resource "aws_route_table" "private_rt1b" {
     vpc_id = "${var.vpc_id}"
     tags {
-      Name = "${terraform.workspace}:private_rt1b"
-      Environment = "${terraform.workspace}"
+      Name = "${var.env_name}:private_rt1b"
+      Environment = "${var.env_name}"
       Type = "private"
     }
 }

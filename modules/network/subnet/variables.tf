@@ -21,3 +21,4 @@ variable "private_rt1a_id" {
 variable "private_rt1b_id" {
   description = "ID of the Private Route Table"
 }
+variable "env_name" {}

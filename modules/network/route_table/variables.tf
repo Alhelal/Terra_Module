@@ -5,3 +5,4 @@ variable "vpc_id" {
 variable "igw_id" {
   description = "ID of your Internet Gateway"
 }
+variable "env_name" {}
