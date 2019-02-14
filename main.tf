@@ -20,6 +20,8 @@ module "route_table_network" {
   source = "./modules/network/route_table/"
   vpc_id = "${module.vpc_network.vpc_id}"
   igw_id = "${module.igw_network.igw_id}"
+  Pub_Sub1_Ngw_id = "${module.ngw_network.Pub_Sub1_Ngw_id}"
+  Pub_Sub2_Ngw_id = "${module.ngw_network.Pub_Sub2_Ngw_id}"
   env_name = "${var.env_name}"
 }
 module "subnet_network" {
@@ -45,6 +47,5 @@ module "ngw_network" {
 
 resource "aws_key_pair" "Key_Pair" {
   key_name  ="${var.key_name}"
-  #public_key = "${file(lookup(var.public_key_path, terraform.workspace))}"
-  public_key = "${var.public_key_path}"
+  public_key = "${file(var.public_key_path)}"
 }

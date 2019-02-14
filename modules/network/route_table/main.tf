@@ -15,6 +15,10 @@ resource "aws_route_table" "public_rt" {
 ## Private Routetable
 resource "aws_route_table" "private_rt1a" {
     vpc_id = "${var.vpc_id}"
+    route {
+      cidr_block = "0.0.0.0/0"
+      gateway_id = "${var.Pub_Sub1_Ngw_id}"
+    }
     tags {
       Name = "${var.env_name}:private_rt1a"
       Environment = "${var.env_name}"
@@ -23,6 +27,10 @@ resource "aws_route_table" "private_rt1a" {
 }
 resource "aws_route_table" "private_rt1b" {
     vpc_id = "${var.vpc_id}"
+    route {
+      cidr_block = "0.0.0.0/0"
+      gateway_id = "${var.Pub_Sub2_Ngw_id}"
+    }
     tags {
       Name = "${var.env_name}:private_rt1b"
       Environment = "${var.env_name}"

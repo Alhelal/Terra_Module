@@ -18,7 +18,6 @@ resource "aws_eip" "Eip_Pub_Sub2" {
 resource "aws_nat_gateway" "Pub_Sub1_Ngw" {
     allocation_id = "${aws_eip.Eip_Pub_Sub1.id}"
     subnet_id = "${var.public-subnet1_id}"
-#    depends_on = "${aws_internet_gateway.igw}"
     tags {
       Name = "${var.env_name}:Pub_Sub1_Ngw"
       Environment = "${var.env_name}"
@@ -27,7 +26,6 @@ resource "aws_nat_gateway" "Pub_Sub1_Ngw" {
 resource "aws_nat_gateway" "Pub_Sub2_Ngw" {
     allocation_id = "${aws_eip.Eip_Pub_Sub2.id}"
     subnet_id = "${var.public-subnet2_id}"
-#    depends_on = "${aws_internet_gateway.igw}"
     tags {
       Name = "${var.env_name}:Pub_Sub2_Ngw"
       Environment = "${var.env_name}"
